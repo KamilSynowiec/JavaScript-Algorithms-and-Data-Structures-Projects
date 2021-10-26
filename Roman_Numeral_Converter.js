@@ -16,25 +16,18 @@ function convertToRoman(num) //given decimal number
   I: 1
   };
    
-  var converted=0;  //variable storing our result
+  var converted='';  //variable storing our result
 
-  if(num==0)
+  for(let i in roman)
   {
-    return "";
-  }
-  else
-  {
-    for(let i in roman)
+    while(num>=roman[i])
     {
-      while(num>=roman[i])
-      {
-        converted+=i;
-        num-=roman[i];
-      }
-      
+      converted+=i;
+      num-=roman[i];
     }
-    return converted;
+      
   }
+  return converted;
 }
 
 console.log(convertToRoman(36));
